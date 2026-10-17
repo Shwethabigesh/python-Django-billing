@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    form p{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    form p label{
+        width: 120px;
+        font-weight: bold;
+    }
+    form p input,.form p select{
+        padding: 6px 10px;
+        width: 250px;
+        box-sizing: border-box;
+    }
+    button{
+        margin-left: 120px;
+        padding: 8px 15px;
+        cursor: pointer;
+    }
+</style>
+<h2>ADD PRODUCT</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p }}
+    <button type="submit">saveproduct</button>
+</form>
+<br>
+<a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

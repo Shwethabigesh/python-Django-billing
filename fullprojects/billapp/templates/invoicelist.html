@@ -1,0 +1,31 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>INVOICELIST</h2>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>invoice</th>
+            <th>customer</th>
+            <th>totalamount</th>
+            <th>date</th>
+        </tr>
+        {% for inv in invoices %}
+        <tr>
+            <td>{{inv.id}}</td>
+            <td>{{inv.customer}}</td>
+            <td>{{inv.totalamount}}</td>
+            <td>{{inv.date}}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    <br>
+    <a href="{% url 'home'%}">Back to Home</a>
+</body>
+</html>
